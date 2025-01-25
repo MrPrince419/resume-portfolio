@@ -6,7 +6,13 @@ import { Moon, Sun, Mail, Phone, Linkedin, Github } from 'lucide-react'
 type Theme = "dark" | "light" | "system"
 const ThemeProviderContext = createContext<{ theme: Theme; setTheme: (theme: Theme) => void } | undefined>(undefined)
 
-function ThemeProvider({ children, defaultTheme = "dark", storageKey = "portfolio-theme" }) {
+interface ThemeProviderProps {
+  children: React.ReactNode;
+  defaultTheme?: Theme;
+  storageKey?: string;
+}
+
+function ThemeProvider({ children, defaultTheme = "dark", storageKey = "portfolio-theme" }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
   )
@@ -53,7 +59,7 @@ function ThemeToggle() {
 
 // Navbar Component
 function Navbar() {
-  const [activeSection, setActiveSection] = useState('home')
+  const [activeSection, setActiveSection] = useState<string>("home")
   const [isScrolled, setIsScrolled] = useState(false)
 
   const navItems = [
@@ -68,9 +74,10 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
-      const sections = document.querySelectorAll('section[id]')
-      sections.forEach(section => {
-        if (window.scrollY >= section.offsetTop - 100) {
+      const sections = document.querySelectorAll("section")
+      sections.forEach((section) => {
+        const element = section as HTMLElement
+        if (window.scrollY >= element.offsetTop - 100) {
           setActiveSection(section.id)
         }
       })
