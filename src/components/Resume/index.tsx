@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Moon, Sun, Mail, Phone, Linkedin, Github, MapPin, Download, ExternalLink } from 'lucide-react'
 import { resumeData } from '../../data/resume'
 import { useTheme } from '../../context/ThemeContext'
+import { getAssetPath } from '../../utils/paths'
 
 // Theme Toggle Component
 function ThemeToggle() {
@@ -58,7 +59,7 @@ function Hero() {
           >
             <div className="w-full h-full rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
               <img
-                src={`/resume-portfolio${resumeData.personalInfo.avatar || '/profile.jpg'}`}
+                src={getAssetPath(resumeData.personalInfo.avatar)}
                 alt={resumeData.personalInfo.name}
                 className="w-full h-full object-cover"
               />
