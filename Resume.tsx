@@ -1,6 +1,7 @@
 import { useState, useEffect, createContext, useContext } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Moon, Sun, Mail, Phone, Linkedin, Github } from 'lucide-react'
+import { Moon, Sun, Mail, Phone, Linkedin, Github, MapPin } from 'lucide-react'
+import { resumeData } from './src/data/resume'
 
 // Theme Context
 type Theme = "dark" | "light" | "system"
@@ -66,6 +67,7 @@ function Navbar() {
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'experience', label: 'Experience' },
+    { id: 'education', label: 'Education' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
@@ -117,10 +119,15 @@ function Navbar() {
 
 // Hero Component
 function Hero() {
+  const { personalInfo } = resumeData;
   return (
     <section id="home" className="min-h-screen flex items-center justify-center">
       <div className="text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">Prince Uwagboe</h1>
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">{personalInfo.name}</h1>
+        <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400 mb-4">
+          <MapPin className="w-4 h-4" />
+          <span>{personalInfo.location}</span>
+        </div>
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-4">
           Full Stack Developer
         </p>
@@ -130,16 +137,16 @@ function Hero() {
           </a>
         </p>
         <div className="flex justify-center space-x-6 mb-8">
-          <a href="mailto:uwagboe.o.p@gmail.com" className="hover:text-blue-600" title="Email">
+          <a href={`mailto:${personalInfo.email}`} className="hover:text-blue-600" title="Email">
             <Mail className="w-6 h-6" />
           </a>
-          <a href="tel:2493564705" className="hover:text-blue-600" title="Phone">
+          <a href={`tel:${personalInfo.phone}`} className="hover:text-blue-600" title="Phone">
             <Phone className="w-6 h-6" />
           </a>
-          <a href="https://linkedin.com/in/prince-uwagboe" className="hover:text-blue-600" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+          <a href={personalInfo.links.linkedin} className="hover:text-blue-600" target="_blank" rel="noopener noreferrer" title="LinkedIn">
             <Linkedin className="w-6 h-6" />
           </a>
-          <a href="https://github.com/MrPrince419" className="hover:text-blue-600" target="_blank" rel="noopener noreferrer" title="GitHub">
+          <a href={personalInfo.links.github} className="hover:text-blue-600" target="_blank" rel="noopener noreferrer" title="GitHub">
             <Github className="w-6 h-6" />
           </a>
         </div>
@@ -148,99 +155,75 @@ function Hero() {
   )
 }
 
-// Skills Component
-const skillCategories = [
-  {
-    name: "Frontend Development",
-    skills: [
-      { name: "React.js", proficiency: 90 },
-      { name: "TypeScript", proficiency: 85 },
-      { name: "HTML/CSS", proficiency: 90 },
-      { name: "TailwindCSS", proficiency: 85 },
-    ]
-  },
-  {
-    name: "Backend Development",
-    skills: [
-      { name: "Python", proficiency: 90 },
-      { name: "Node.js", proficiency: 85 },
-      { name: "Django", proficiency: 80 },
-      { name: "Flask", proficiency: 80 },
-    ]
-  },
-  // ... other categories
-]
-
-function Skills() {
+// About Component
+function About() {
   return (
-    <section id="skills" className="py-20">
-      <h2 className="text-3xl font-bold text-center mb-12">Skills & Expertise</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-        {skillCategories.map(category => (
-          <div key={category.name} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-            <h3 className="text-xl font-bold mb-4">{category.name}</h3>
-            <div className="space-y-4">
-              {category.skills.map(skill => (
-                <div key={skill.name}>
-                  <div className="flex justify-between mb-1">
-                    <span>{skill.name}</span>
-                    <span>{skill.proficiency}%</span>
-                  </div>
-                  <div className="h-2 bg-gray-200 rounded-full">
-                    <div
-                      className="h-full bg-blue-600 rounded-full"
-                      style={{ width: `${skill.proficiency}%` }}
-                    />
-                  </div>
-                </div>
+    <section id="about" className="py-20">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-8">About Me</h2>
+        <div className="prose dark:prose-invert max-w-none">
+          <p className="text-lg">{resumeData.summary}</p>
+          <div className="mt-8">
+            <h3 className="text-2xl font-semibold mb-4">Current Focus</h3>
+            <ul className="list-disc pl-6">
+              {resumeData.currentFocus.map((focus, index) => (
+                <li key={index}>{focus}</li>
               ))}
-            </div>
+            </ul>
           </div>
-        ))}
+          <div className="mt-8">
+            <h3 className="text-2xl font-semibold mb-4">Professional Goals</h3>
+            <ul className="list-disc pl-6">
+              {resumeData.professionalGoals.map((goal, index) => (
+                <li key={index}>{goal}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   )
 }
 
-// Projects Component
-const projects = [
-  {
-    title: "Mood Based Music Player",
-    date: "Dec 2024",
-    description: "Real-time mood detection music player with playlist organization",
-    tech: ["TensorFlow.js", "Web Audio API", "JavaScript", "Tailwind CSS"],
-    features: [
-      "Real-time mood detection",
-      "Music upload",
-      "Drag-and-drop interface",
-      "Dark mode support"
-    ]
-  },
-  // ... other projects
-]
-
-function Projects() {
+// Experience Component
+function Experience() {
   return (
-    <section id="projects" className="py-20">
-      <h2 className="text-3xl font-bold text-center mb-12">Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map(project => (
-          <div key={project.title} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-            <div className="flex justify-between items-start mb-4">
-              <h3 className="text-xl font-bold">{project.title}</h3>
-              <span className="text-sm text-gray-600 dark:text-gray-400">{project.date}</span>
+    <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-800">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-8">Experience</h2>
+        <div className="space-y-12">
+          {resumeData.experience.map((job, index) => (
+            <div key={index} className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+              <h3 className="text-xl font-semibold">{job.title}</h3>
+              <p className="text-gray-600 dark:text-gray-400">{job.company}</p>
+              <p className="text-gray-500 dark:text-gray-400 mb-4">{job.period} {job.location && `| ${job.location}`}</p>
+              <ul className="list-disc pl-6 space-y-2">
+                {job.responsibilities.map((resp, idx) => (
+                  <li key={idx}>{resp}</li>
+                ))}
+              </ul>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.tech.map(tech => (
-                <span key={tech} className="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <ul className="list-disc list-inside text-gray-600 dark:text-gray-400">
-              {project.features.map(feature => (
-                <li key={feature}>{feature}</li>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// Education Component
+function Education() {
+  return (
+    <section id="education" className="py-20">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-8">Education</h2>
+        {resumeData.education.map((edu, index) => (
+          <div key={index} className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+            <h3 className="text-xl font-semibold">{edu.degree}</h3>
+            <p className="text-gray-600 dark:text-gray-400">{edu.institution}</p>
+            <p className="text-gray-500 dark:text-gray-400 mb-4">{edu.period} | {edu.location}</p>
+            <ul className="list-disc pl-6 space-y-2">
+              {edu.highlights.map((highlight, idx) => (
+                <li key={idx}>{highlight}</li>
               ))}
             </ul>
           </div>
@@ -250,46 +233,90 @@ function Projects() {
   )
 }
 
+// Skills Component
+function Skills() {
+  return (
+    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-8">Skills</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {resumeData.skills.map((category, index) => (
+            <div key={index} className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+              <h3 className="text-xl font-semibold mb-4">{category.category}</h3>
+              <div className="flex flex-wrap gap-2">
+                {category.items.map((skill, idx) => (
+                  <span key={idx} className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 rounded-full text-sm">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// Projects Component
+function Projects() {
+  return (
+    <section id="projects" className="py-20">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-8">Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {resumeData.projects.map((project, index) => (
+            <div key={index} className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+              <div className="flex justify-between items-start">
+                <h3 className="text-xl font-semibold">{project.name}</h3>
+                <span className="text-sm text-gray-500 dark:text-gray-400">{project.date}</span>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {project.tech.map((tech, idx) => (
+                  <span key={idx} className="px-2 py-1 bg-gray-100 dark:bg-gray-600 rounded text-sm">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-4">
+                <h4 className="font-semibold mb-2">Features:</h4>
+                <ul className="list-disc pl-6 space-y-1">
+                  {project.features.map((feature, idx) => (
+                    <li key={idx}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+              <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+                <span className="font-semibold">Deployment:</span> {project.deployment}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // Main App Component
-export default function App() {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    setTimeout(() => setIsLoading(false), 1500)
-  }, [])
-
+function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-        <AnimatePresence>
-          {isLoading ? (
-            <motion.div
-              key="loader"
-              initial={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="h-screen w-screen flex items-center justify-center"
-            >
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full"
-              />
-            </motion.div>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-            >
-              <Navbar />
-              <main>
-                <Hero />
-                <Skills />
-                <Projects />
-              </main>
-            </motion.div>
-          )}
-        </AnimatePresence>
+      <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <Education />
+          <Skills />
+          <Projects />
+        </main>
+        <footer className="py-8 text-center text-gray-600 dark:text-gray-400">
+          <p> 2024 Prince Uwagboe. All rights reserved.</p>
+        </footer>
       </div>
     </ThemeProvider>
   )
-} 
+}
+
+export default App;
