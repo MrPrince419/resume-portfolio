@@ -1,71 +1,109 @@
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 interface ContactProps {
-  personalInfo: {
-    email: string
-    phone: string
-    links: {
-      linkedin: string
-      github: string
+  email: string;
+  phone: string;
+  location: string;
+  links: {
+    github: string;
+    linkedin: string;
+  };
+}
+
+function Contact({ email, phone, location, links }: ContactProps) {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
     }
-  }
-}
+  };
 
-function Contact({ personalInfo }: ContactProps) {
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+  };
+
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.6 }}
-      className="mb-12"
-    >
-      <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Contact</h2>
-      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-        <div className="space-y-4">
-          <div>
-            <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Get in Touch</h3>
-            <p className="text-gray-600 dark:text-gray-300">
-              I'm always open to new opportunities and collaborations.
-            </p>
-          </div>
-          
-          <div className="flex flex-col space-y-2">
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-            >
-              {personalInfo.email}
-            </a>
-            <a
-              href={`tel:${personalInfo.phone}`}
-              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-            >
-              {personalInfo.phone}
-            </a>
-          </div>
+    <section className="mb-12">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="text-3xl font-bold mb-8 text-gray-900 dark:text-white"
+      >
+        Contact
+      </motion.h2>
 
-          <div className="flex space-x-4">
-            <a
-              href={personalInfo.links.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-            >
-              LinkedIn
-            </a>
-            <a
-              href={personalInfo.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-            >
-              GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-    </motion.section>
-  )
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-6"
+      >
+        <motion.div variants={item} className="space-y-4">
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href={`mailto:${email}`}
+            className="flex items-center space-x-3 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+          >
+            <FaEnvelope className="w-5 h-5" />
+            <span>{email}</span>
+          </motion.a>
+
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href={`tel:${phone}`}
+            className="flex items-center space-x-3 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+          >
+            <FaPhone className="w-5 h-5" />
+            <span>{phone}</span>
+          </motion.a>
+
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center space-x-3 text-gray-600 dark:text-gray-400"
+          >
+            <FaMapMarkerAlt className="w-5 h-5" />
+            <span>{location}</span>
+          </motion.div>
+        </motion.div>
+
+        <motion.div variants={item} className="space-y-4">
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href={links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-3 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+          >
+            <FaGithub className="w-5 h-5" />
+            <span>GitHub</span>
+          </motion.a>
+
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href={links.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-3 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+          >
+            <FaLinkedin className="w-5 h-5" />
+            <span>LinkedIn</span>
+          </motion.a>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
 }
 
-export default Contact
+export default Contact;
