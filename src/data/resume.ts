@@ -5,7 +5,7 @@ interface PersonalInfo {
   phone: string;
   linkedin: string;
   github: string;
-  avatar?: string;
+  avatar: string;
 }
 
 interface Experience {
