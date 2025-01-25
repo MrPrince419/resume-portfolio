@@ -44,6 +44,7 @@ interface ResumeData {
   education: Education[];
   skills: Skills;
   projects: Project[];
+  references: string;
 }
 
 export const resumeData: ResumeData = {
