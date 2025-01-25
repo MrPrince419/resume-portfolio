@@ -9,5 +9,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <ThemeProvider>
       <Resume />
     </ThemeProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
