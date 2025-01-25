@@ -55,8 +55,8 @@ export const resumeData = {
       tech: ["TensorFlow.js", "Web Audio API", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS"],
       features: ["Real-time mood detection", "Music upload and mood-based playlist organization", "Drag-and-drop interface", "Shuffle and repeat modes", "Progress tracking", "Responsive design", "Dark mode support"],
       deployment: "Netlify",
-      liveDemo: "https://github.com/MrPrince419/Mood-Based-Music-Player",
-      codeLink: "https://github.com/MrPrince419/Mood-Based-Music-Player"
+      demoUrl: "https://github.com/MrPrince419/Mood-Based-Music-Player",
+      sourceUrl: "https://github.com/MrPrince419/Mood-Based-Music-Player"
     },
     {
       name: "Social Media App",
@@ -64,8 +64,8 @@ export const resumeData = {
       tech: ["Vanilla JavaScript", "HTML5", "CSS3", "Font Awesome", "DiceBear API"],
       features: ["User authentication", "Post creation with images and captions", "Real-time interactions", "Live image previews", "Interactive like system", "Responsive design", "Toast notifications"],
       deployment: "Netlify",
-      liveDemo: "https://github.com/MrPrince419/Social-Media-App",
-      codeLink: "https://github.com/MrPrince419/Social-Media-App"
+      demoUrl: "https://github.com/MrPrince419/Social-Media-App",
+      sourceUrl: "https://github.com/MrPrince419/Social-Media-App"
     },
     {
       name: "Shopping Cart",
@@ -73,8 +73,8 @@ export const resumeData = {
       tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn/ui", "Lucide Icons"],
       features: ["Interactive product browsing", "Real-time cart updates", "Elegant transitions", "Responsive design", "Modern UI", "Optimized performance"],
       deployment: "Netlify",
-      liveDemo: "https://github.com/MrPrince419/shopping-cart",
-      codeLink: "https://github.com/MrPrince419/shopping-cart"
+      demoUrl: "https://github.com/MrPrince419/shopping-cart",
+      sourceUrl: "https://github.com/MrPrince419/shopping-cart"
     },
     {
       name: "Voting System",
@@ -82,8 +82,8 @@ export const resumeData = {
       tech: ["Vanilla JavaScript"],
       features: ["User authentication", "Poll creation", "Real-time form validation", "localStorage sessions", "Dynamic polls", "Real-time vote counting", "Progress tracking", "Interactive feedback", "Responsive design"],
       deployment: "Netlify",
-      liveDemo: "https://github.com/MrPrince419/voting-system",
-      codeLink: "https://github.com/MrPrince419/voting-system"
+      demoUrl: "https://github.com/MrPrince419/voting-system",
+      sourceUrl: "https://github.com/MrPrince419/voting-system"
     },
     {
       name: "Calorie Calculator",
@@ -91,8 +91,8 @@ export const resumeData = {
       tech: ["JavaScript", "React", "Chart.js"],
       features: ["Calorie tracking", "BMR calculation", "Nutritional goals", "Food database", "Progress visualization"],
       deployment: "Netlify",
-      liveDemo: "https://github.com/MrPrince419/calorie-calculator",
-      codeLink: "https://github.com/MrPrince419/calorie-calculator"
+      demoUrl: "https://github.com/MrPrince419/calorie-calculator",
+      sourceUrl: "https://github.com/MrPrince419/calorie-calculator"
     }
   ],
   skills: [
