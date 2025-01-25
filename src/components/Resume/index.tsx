@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Moon, Sun, Mail, Phone, Linkedin, Github, MapPin } from 'lucide-react'
+import { Moon, Sun, Mail, Phone, Linkedin, Github, MapPin, Download, ExternalLink } from 'lucide-react'
 import { resumeData } from '../../data/resume'
 import { useTheme } from '../../context/ThemeContext'
 
@@ -42,32 +42,126 @@ function Navbar() {
 // Hero Component
 function Hero() {
   const { personalInfo } = resumeData
+  
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">{personalInfo.name}</h1>
-        <div className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400 mb-4">
-          <MapPin className="w-4 h-4" />
-          <span>{personalInfo.location}</span>
-        </div>
-        <div className="flex items-center justify-center space-x-4 text-gray-600 dark:text-gray-400">
-          <a href={`mailto:${personalInfo.email}`} className="flex items-center space-x-1 hover:text-gray-900 dark:hover:text-gray-100">
-            <Mail className="w-4 h-4" />
-            <span>{personalInfo.email}</span>
-          </a>
-          <a href={`tel:${personalInfo.phone}`} className="flex items-center space-x-1 hover:text-gray-900 dark:hover:text-gray-100">
-            <Phone className="w-4 h-4" />
-            <span>{personalInfo.phone}</span>
-          </a>
-        </div>
-        <div className="flex items-center justify-center space-x-4 mt-4">
-          <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">
-            <Linkedin className="w-6 h-6" />
-          </a>
-          <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">
-            <Github className="w-6 h-6" />
-          </a>
-        </div>
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <div className="container mx-auto px-4 py-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <motion.div
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="mb-8"
+          >
+            <img
+              src={personalInfo.avatar || "https://via.placeholder.com/150"}
+              alt={personalInfo.name}
+              className="w-32 h-32 rounded-full mx-auto border-4 border-blue-500 dark:border-blue-400 shadow-lg"
+            />
+          </motion.div>
+          
+          <motion.h1 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400"
+          >
+            {personalInfo.name}
+          </motion.h1>
+          
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400 mb-6"
+          >
+            <MapPin className="w-5 h-5" />
+            <span className="text-lg">{personalInfo.location}</span>
+          </motion.div>
+
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
+          >
+            {resumeData.summary}
+          </motion.p>
+
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6 mb-8"
+          >
+            <a 
+              href={`mailto:${personalInfo.email}`}
+              className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <Mail className="w-5 h-5" />
+              <span>{personalInfo.email}</span>
+            </a>
+            <a 
+              href={`tel:${personalInfo.phone}`}
+              className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <Phone className="w-5 h-5" />
+              <span>{personalInfo.phone}</span>
+            </a>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7, duration: 0.5 }}
+            className="flex items-center justify-center space-x-6"
+          >
+            <a 
+              href="/resume.pdf" 
+              download
+              className="btn btn-primary flex items-center space-x-2"
+            >
+              <Download className="w-5 h-5" />
+              <span>Download CV</span>
+            </a>
+            <a 
+              href="#projects"
+              className="btn btn-outline flex items-center space-x-2"
+            >
+              <ExternalLink className="w-5 h-5" />
+              <span>View Projects</span>
+            </a>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+            className="flex items-center justify-center space-x-6 mt-8"
+          >
+            <a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a
+              href={personalInfo.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <Github className="w-6 h-6" />
+            </a>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )
@@ -150,24 +244,59 @@ function Education() {
 // Skills Component
 function Skills() {
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8">Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {Object.entries(resumeData.skills).map(([category, skills]) => (
-            <div key={category} className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4 capitalize">{category}</h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm"
-                  >
-                    {skill}
-                  </span>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <h2 className="section-title">Technical Skills</h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
+            Here are the technologies and tools I work with to build modern web applications.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {Object.entries(resumeData.skills).map(([category, skills], index) => (
+            <motion.div
+              key={category}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="card p-6"
+            >
+              <h3 className="text-xl font-semibold mb-4 capitalize text-blue-600 dark:text-blue-400">
+                {category}
+              </h3>
+              <div className="space-y-4">
+                {skills.map((skill, idx) => (
+                  <div key={idx} className="relative">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-gray-700 dark:text-gray-300">{skill}</span>
+                    </div>
+                    <motion.div
+                      className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "100%" }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: idx * 0.1 }}
+                    >
+                      <motion.div
+                        className="h-full bg-gradient-to-r from-blue-500 to-blue-400"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "85%" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.5, delay: idx * 0.1 }}
+                      />
+                    </motion.div>
+                  </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -178,9 +307,20 @@ function Skills() {
 // Projects Component
 function Projects() {
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8">Projects</h2>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="section-title text-center">Featured Projects</h2>
+          <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+            Here are some of my recent projects that showcase my skills and experience in web development.
+          </p>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {resumeData.projects.map((project, index) => (
             <motion.div
@@ -189,30 +329,69 @@ function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md"
+              className="card overflow-hidden group"
             >
-              <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.technologies.map((tech, idx) => (
-                  <span
-                    key={idx}
-                    className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  View Project →
-                </a>
+              {project.image && (
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
               )}
+              <div className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                    {project.name}
+                  </h3>
+                </div>
+                
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 text-sm bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary"
+                    >
+                      <span className="flex items-center space-x-2">
+                        <ExternalLink className="w-4 h-4" />
+                        <span>Live Demo</span>
+                      </span>
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-outline"
+                    >
+                      <span className="flex items-center space-x-2">
+                        <Github className="w-4 h-4" />
+                        <span>Source Code</span>
+                      </span>
+                    </a>
+                  )}
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>

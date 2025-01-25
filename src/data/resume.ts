@@ -5,6 +5,7 @@ interface PersonalInfo {
   phone: string;
   linkedin: string;
   github: string;
+  avatar?: string;
 }
 
 interface Experience {
@@ -26,6 +27,8 @@ interface Project {
   description: string;
   technologies: string[];
   link?: string;
+  github?: string;
+  image?: string;
 }
 
 interface Skills {
@@ -50,9 +53,10 @@ export const resumeData: ResumeData = {
     email: "uwagboeprince@gmail.com",
     phone: "+234 803 123 4567",
     linkedin: "https://linkedin.com/in/prince-uwagboe",
-    github: "https://github.com/mrprince419"
+    github: "https://github.com/mrprince419",
+    avatar: "https://avatars.githubusercontent.com/u/mrprince419"
   },
-  summary: "Passionate Full Stack Developer with expertise in building modern web applications using React, TypeScript, and Node.js. Committed to creating efficient, scalable, and user-friendly solutions.",
+  summary: "Passionate Full Stack Developer crafting modern web experiences with React, TypeScript, and Node.js",
   currentFocus: "Currently focusing on expanding my knowledge in cloud technologies and microservices architecture while building robust full-stack applications.",
   professionalGoals: "Aiming to become a technical leader who can architect complex systems and mentor other developers while staying hands-on with coding.",
   experience: [
@@ -126,21 +130,27 @@ export const resumeData: ResumeData = {
   projects: [
     {
       name: "E-commerce Platform",
-      description: "A full-stack e-commerce solution with real-time inventory management and payment processing",
+      description: "A full-stack e-commerce solution with real-time inventory management, secure payment processing, and a responsive admin dashboard.",
       technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
-      link: "https://github.com/mrprince419/ecommerce-platform"
+      link: "https://ecommerce-demo.mrprince419.dev",
+      github: "https://github.com/mrprince419/ecommerce-platform",
+      image: "https://via.placeholder.com/800x400?text=E-commerce+Platform"
     },
     {
       name: "Task Management System",
-      description: "A collaborative task management application with real-time updates and team features",
+      description: "A collaborative task management application with real-time updates, team features, and detailed analytics for productivity tracking.",
       technologies: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
-      link: "https://github.com/mrprince419/task-manager"
+      link: "https://tasks.mrprince419.dev",
+      github: "https://github.com/mrprince419/task-manager",
+      image: "https://via.placeholder.com/800x400?text=Task+Management"
     },
     {
       name: "Portfolio Website",
-      description: "A modern portfolio website built with React and TypeScript",
+      description: "A modern portfolio website built with React and TypeScript, featuring dark mode, animations, and responsive design.",
       technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      link: "https://github.com/mrprince419/portfolio"
+      link: "https://mrprince419.github.io/portfolio",
+      github: "https://github.com/mrprince419/portfolio",
+      image: "https://via.placeholder.com/800x400?text=Portfolio+Website"
     }
   ]
 };
