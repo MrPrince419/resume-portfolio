@@ -54,7 +54,7 @@ export const resumeData = {
       date: "Dec 2024",
       tech: ["TensorFlow.js", "Web Audio API", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS"],
       features: ["Real-time mood detection", "Music upload and mood-based playlist organization", "Drag-and-drop interface", "Shuffle and repeat modes", "Progress tracking", "Responsive design", "Dark mode support"],
-      deployment: "Netlify, with automatic updates",
+      deployment: "Netlify",
       liveDemo: "https://github.com/MrPrince419/Mood-Based-Music-Player",
       codeLink: "https://github.com/MrPrince419/Mood-Based-Music-Player"
     },
@@ -63,7 +63,7 @@ export const resumeData = {
       date: "Nov 2024",
       tech: ["Vanilla JavaScript", "HTML5", "CSS3", "Font Awesome", "DiceBear API"],
       features: ["User authentication", "Post creation with images and captions", "Real-time interactions", "Live image previews", "Interactive like system", "Responsive design", "Toast notifications"],
-      deployment: "Netlify, with automatic updates",
+      deployment: "Netlify",
       liveDemo: "https://github.com/MrPrince419/Social-Media-App",
       codeLink: "https://github.com/MrPrince419/Social-Media-App"
     },
@@ -72,7 +72,7 @@ export const resumeData = {
       date: "Oct 2024",
       tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn/ui", "Lucide Icons"],
       features: ["Interactive product browsing", "Real-time cart updates", "Elegant transitions", "Responsive design", "Modern UI", "Optimized performance"],
-      deployment: "Netlify, with automatic updates",
+      deployment: "Netlify",
       liveDemo: "https://github.com/MrPrince419/shopping-cart",
       codeLink: "https://github.com/MrPrince419/shopping-cart"
     },
@@ -81,7 +81,7 @@ export const resumeData = {
       date: "Sep 2024",
       tech: ["Vanilla JavaScript"],
       features: ["User authentication", "Poll creation", "Real-time form validation", "localStorage sessions", "Dynamic polls", "Real-time vote counting", "Progress tracking", "Interactive feedback", "Responsive design"],
-      deployment: "Netlify, with automatic updates",
+      deployment: "Netlify",
       liveDemo: "https://github.com/MrPrince419/voting-system",
       codeLink: "https://github.com/MrPrince419/voting-system"
     },
@@ -90,7 +90,7 @@ export const resumeData = {
       date: "Aug 2024",
       tech: ["JavaScript", "React", "Chart.js"],
       features: ["Calorie tracking", "BMR calculation", "Nutritional goals", "Food database", "Progress visualization"],
-      deployment: "Netlify, with automatic updates",
+      deployment: "Netlify",
       liveDemo: "https://github.com/MrPrince419/calorie-calculator",
       codeLink: "https://github.com/MrPrince419/calorie-calculator"
     }
