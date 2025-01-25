@@ -11,7 +11,7 @@ export const resumeData = {
     }
   },
   intro: "I am a Full-Stack Developer passionate about crafting innovative web solutions. Proficient in Python, JavaScript/TypeScript, React, Node.js, Django, Flask, and AWS, I specialize in building dynamic, user-friendly applications. From a Mood-Based Music Player using TensorFlow.js to real-time Social Media Apps, I transform ideas into clean, efficient, and impactful solutions. With a strong problem-solving mindset and a commitment to clean code, I thrive on turning challenges into opportunities. Let's connect and create something amazing together!",
-  summary: "I'm a Full-Stack Developer with expertise in Python, JavaScript/TypeScript, React.js, Node.js, Django, Flask, AWS, and SQL/NoSQL. I specialize in building dynamic, user-friendly web applications, such as a Mood-Based Music Player using TensorFlow.js and a Social Media App with real-time interactions. With experience in technical support and CRM management, I bring strong problem-solving skills, a passion for clean code, and a commitment to delivering innovative solutions. Let's connect and create something amazing!",
+  summary: "",
   education: [
     {
       degree: "Bachelor of Science",
