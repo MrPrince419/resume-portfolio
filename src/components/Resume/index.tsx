@@ -43,8 +43,14 @@ function Navbar() {
 // Hero Component
 function Hero() {
   return (
-    <section className="relative py-20 overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="relative min-h-screen flex items-center py-20 overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-4 relative">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Profile Image */}
           <motion.div
@@ -74,28 +80,31 @@ function Hero() {
               transition={{ duration: 0.5 }}
               className="text-center lg:text-left"
             >
-              <h1 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-                {resumeData.personalInfo.name}
+              <h1 className="text-4xl lg:text-6xl font-bold mb-4">
+                Hi, I'm{" "}
+                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                  {resumeData.personalInfo.name}
+                </span>
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
                 {resumeData.summary}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                 <a
                   href="/resume.pdf"
-                  className="btn btn-primary inline-flex items-center justify-center gap-2"
+                  className="btn btn-primary"
                   download
                 >
-                  <Download className="w-5 h-5" />
+                  <Download className="w-5 h-5 mr-2" />
                   Download CV
                 </a>
                 <a
                   href="#projects"
-                  className="btn btn-outline inline-flex items-center justify-center gap-2"
+                  className="btn btn-outline"
                 >
+                  <ExternalLink className="w-5 h-5 mr-2" />
                   View Projects
-                  <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
 
@@ -286,96 +295,70 @@ function Skills() {
 function Projects() {
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="section-title text-center">Featured Projects</h2>
-          <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and experience in web development.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="container">
+        <h2 className="section-title">Featured Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {resumeData.projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card overflow-hidden group"
+              viewport={{ once: true }}
+              className="card group"
             >
               {project.image && (
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
                   <img
-                    src={project.image}
+                    src={getAssetPath(project.image)}
                     alt={project.name}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               )}
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                    {project.name}
-                  </h3>
-                </div>
-                
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 text-sm bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center space-x-4">
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-primary"
-                    >
-                      <span className="flex items-center space-x-2">
-                        <ExternalLink className="w-4 h-4" />
-                        <span>Live Demo</span>
-                      </span>
-                    </a>
-                  )}
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-outline"
-                    >
-                      <span className="flex items-center space-x-2">
-                        <Github className="w-4 h-4" />
-                        <span>Source Code</span>
-                      </span>
-                    </a>
-                  )}
-                </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+                {project.name}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.technologies.map((tech) => (
+                  <span key={tech} className="skill-tag">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex gap-4 mt-auto">
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary text-sm py-2"
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Live Demo
+                  </a>
+                )}
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline text-sm py-2"
+                  >
+                    <Github className="w-4 h-4 mr-2" />
+                    View Code
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 // References Component
