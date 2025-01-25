@@ -414,7 +414,7 @@ function References() {
         >
           <h2 className="section-title">References</h2>
           <p className="text-gray-600 dark:text-gray-400 mt-4">
-            {resumeData.references}
+            {resumeData?.references || "Available upon request"}
           </p>
         </motion.div>
       </div>
