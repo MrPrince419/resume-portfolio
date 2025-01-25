@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "homepage": "https://mrprince419.github.io/resume-portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
