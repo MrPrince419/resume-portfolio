@@ -121,20 +121,25 @@ function Hero() {
     <section id="home" className="min-h-screen flex items-center justify-center">
       <div className="text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">Prince Uwagboe</h1>
-        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8">
+        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-4">
           Full Stack Developer
         </p>
+        <p className="text-md md:text-lg text-gray-500 dark:text-gray-400 mb-8">
+          Portfolio: <a href="https://mrprince419.github.io/resume-portfolio/" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+            mrprince419.github.io/resume-portfolio
+          </a>
+        </p>
         <div className="flex justify-center space-x-6 mb-8">
-          <a href="mailto:uwagboe.o.p@gmail.com" className="hover:text-blue-600">
+          <a href="mailto:uwagboe.o.p@gmail.com" className="hover:text-blue-600" title="Email">
             <Mail className="w-6 h-6" />
           </a>
-          <a href="tel:2493564705" className="hover:text-blue-600">
+          <a href="tel:2493564705" className="hover:text-blue-600" title="Phone">
             <Phone className="w-6 h-6" />
           </a>
-          <a href="https://linkedin.com/in/your-profile" className="hover:text-blue-600">
+          <a href="https://linkedin.com/in/prince-uwagboe" className="hover:text-blue-600" target="_blank" rel="noopener noreferrer" title="LinkedIn">
             <Linkedin className="w-6 h-6" />
           </a>
-          <a href="https://github.com/your-profile" className="hover:text-blue-600">
+          <a href="https://github.com/MrPrince419" className="hover:text-blue-600" target="_blank" rel="noopener noreferrer" title="GitHub">
             <Github className="w-6 h-6" />
           </a>
         </div>
