@@ -437,7 +437,7 @@ function App() {
         <References />
       </main>
       <footer className="py-8 text-center text-gray-600 dark:text-gray-400">
-        <p> 2024 Prince Uwagboe. All rights reserved.</p>
+        <p>&copy; 2025 Prince Uwagboe. All rights reserved.</p>
       </footer>
     </div>
   )
