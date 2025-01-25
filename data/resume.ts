@@ -5,14 +5,12 @@ export const resumeData = {
     email: "uwagboe.o.p@gmail.com",
     phone: "2493564705",
     links: {
-      linkedin: "https://linkedin.com/in/prince-uwagboe",
+      linkedin: "https://www.linkedin.com/in/prince05/",
       github: "https://github.com/MrPrince419"
     }
   },
-  summary: `I am a full-stack developer with a background in computer science from Algoma University. I specialize in Python,
-    JavaScript/TypeScript, React.js, Node.js, Django, Flask, AWS, Docker, and SQL/NoSQL. With experience in technical support
-    and CRM management, I've created projects like Social Media App, and Mood-Based Music Player. My technical proficiency,
-    analytical skills, and commitment to continuous learning make me an invaluable asset to any organization.`,
+  intro: "a Full-Stack Developer passionate about building innovative web solutions. With expertise in Python, JavaScript/TypeScript, React, and AWS, I turn ideas into clean, efficient, and user-friendly applications. Let's create something amazing together.",
+  summary: "I'm a Full-Stack Developer with expertise in Python, JavaScript/TypeScript, React.js, Node.js, Django, Flask, AWS, and SQL/NoSQL. I specialize in building dynamic, user-friendly web applications, such as a Mood-Based Music Player using TensorFlow.js and a Social Media App with real-time interactions. With experience in technical support and CRM management, I bring strong problem-solving skills, a passion for clean code, and a commitment to delivering innovative solutions. My technical proficiency, analytical skills, and dedication to continuous learning make me an invaluable asset to any organization. Let's connect and create something amazing!",
   education: [
     {
       degree: "Bachelor of Science",
