@@ -400,6 +400,28 @@ function Projects() {
   )
 }
 
+// References Component
+function References() {
+  return (
+    <section id="references" className="py-20 bg-gray-50 dark:bg-gray-800">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <h2 className="section-title">References</h2>
+          <p className="text-gray-600 dark:text-gray-400 mt-4">
+            {resumeData.references}
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 // Main App Component
 function App() {
   return (
@@ -412,6 +434,7 @@ function App() {
         <Education />
         <Skills />
         <Projects />
+        <References />
       </main>
       <footer className="py-8 text-center text-gray-600 dark:text-gray-400">
         <p> 2024 Prince Uwagboe. All rights reserved.</p>

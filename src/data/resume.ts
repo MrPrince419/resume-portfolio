@@ -49,108 +49,118 @@ interface ResumeData {
 export const resumeData: ResumeData = {
   personalInfo: {
     name: "Prince Uwagboe",
-    location: "Lagos, Nigeria",
-    email: "uwagboeprince@gmail.com",
-    phone: "+234 803 123 4567",
+    location: "Canada",
+    email: "uwagboe.o.p@gmail.com",
+    phone: "249-356-4705",
     linkedin: "https://linkedin.com/in/prince-uwagboe",
     github: "https://github.com/mrprince419",
     avatar: "https://avatars.githubusercontent.com/u/mrprince419"
   },
-  summary: "Passionate Full Stack Developer crafting modern web experiences with React, TypeScript, and Node.js",
-  currentFocus: "Currently focusing on expanding my knowledge in cloud technologies and microservices architecture while building robust full-stack applications.",
-  professionalGoals: "Aiming to become a technical leader who can architect complex systems and mentor other developers while staying hands-on with coding.",
+  summary: "I am a full-stack developer with a background in computer science from Algoma University. I specialize in Python, JavaScript/TypeScript, React.js, Node.js, Django, Flask, AWS, Docker, and SQL/NoSQL. With experience in technical support and CRM management, I've created projects like Social Media App, and Mood-Based Music Player. My technical proficiency, analytical skills, and commitment to continuous learning make me an invaluable asset to any organization.",
+  currentFocus: "Currently pursuing a Bachelor's degree in Computer Science while working on full-stack web development projects.",
+  professionalGoals: "Aiming to leverage my technical skills and experience to contribute to innovative software solutions while continuing to grow as a developer.",
   experience: [
     {
-      title: "Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      period: "2022 - Present",
+      title: "IT Support Intern",
+      company: "Cita Marketplace",
+      period: "Feb 2024 – Jan 2025",
       responsibilities: [
-        "Developed and maintained multiple React-based web applications",
-        "Implemented RESTful APIs using Node.js and Express",
-        "Optimized database queries and improved application performance",
-        "Collaborated with cross-functional teams to deliver high-quality solutions"
+        "Provided technical assistance to clients and employees, resolving hardware and software issues via email and chat",
+        "Assisted with setting up and maintaining computer systems and networks",
+        "Updated and maintained the IT knowledge base for common issues and solutions"
       ]
     },
     {
-      title: "Frontend Developer",
-      company: "Digital Innovations Ltd",
-      period: "2020 - 2022",
+      title: "Customer Service Representative",
+      company: "Mary's Place",
+      period: "Mar 2022 – Dec 2022",
       responsibilities: [
-        "Built responsive user interfaces using React and TypeScript",
-        "Implemented state management solutions using Redux and Context API",
-        "Worked with UI/UX designers to implement pixel-perfect designs",
-        "Mentored junior developers and conducted code reviews"
+        "Assisted customers with inquiries, reservations, and order placements via phone, email, and chat",
+        "Resolved customer complaints and issues promptly, ensuring high levels of customer satisfaction",
+        "Processed online orders and managed order tracking"
       ]
     }
   ],
   education: [
     {
-      degree: "Bachelor of Science in Computer Science",
-      school: "University of Lagos",
-      period: "2016 - 2020",
+      degree: "Bachelor of Science, Computer Science",
+      school: "Algoma University",
+      period: "2023 – present",
       highlights: [
-        "First Class Honours",
-        "Best Graduating Student in Computer Science",
-        "President of the Computer Science Student Association"
+        "AWS Workshop",
+        "Volunteer, Tech Support Team",
+        "Mobile App Development Workshop"
       ]
     }
   ],
   skills: {
     frontend: [
-      "React",
+      "React.js",
       "TypeScript",
-      "Next.js",
-      "Tailwind CSS",
-      "Redux",
-      "HTML5/CSS3"
+      "JavaScript",
+      "HTML/CSS",
+      "TailwindCSS"
     ],
     backend: [
       "Node.js",
-      "Express",
       "Python",
       "Django",
-      "RESTful APIs",
-      "GraphQL"
+      "Flask",
+      "SQL/NoSQL"
     ],
-    database: [
-      "MongoDB",
-      "PostgreSQL",
-      "MySQL",
-      "Redis"
-    ],
-    tools: [
-      "Git",
-      "Docker",
+    cloud: [
       "AWS",
-      "Jest",
-      "CI/CD",
-      "Webpack"
+      "Docker",
+      "Netlify"
+    ],
+    other: [
+      "Technical Support",
+      "Troubleshooting",
+      "CRM Management",
+      "Git"
     ]
   },
   projects: [
     {
-      name: "E-commerce Platform",
-      description: "A full-stack e-commerce solution with real-time inventory management, secure payment processing, and a responsive admin dashboard.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
-      link: "https://ecommerce-demo.mrprince419.dev",
-      github: "https://github.com/mrprince419/ecommerce-platform",
-      image: "https://via.placeholder.com/800x400?text=E-commerce+Platform"
+      name: "Mood Based Music Player",
+      description: "A web application that detects user mood and creates personalized playlists. Features real-time mood detection, music upload, and mood-based playlist organization.",
+      technologies: ["TensorFlow.js", "Web Audio API", "JavaScript", "Tailwind CSS"],
+      link: "https://mood-player.netlify.app",
+      github: "https://github.com/mrprince419/mood-player",
+      image: "https://via.placeholder.com/800x400?text=Mood+Based+Music+Player"
     },
     {
-      name: "Task Management System",
-      description: "A collaborative task management application with real-time updates, team features, and detailed analytics for productivity tracking.",
-      technologies: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
-      link: "https://tasks.mrprince419.dev",
-      github: "https://github.com/mrprince419/task-manager",
-      image: "https://via.placeholder.com/800x400?text=Task+Management"
+      name: "Social Media App",
+      description: "A social media platform with user authentication, post creation, and real-time interactions. Features image uploads and live previews.",
+      technologies: ["JavaScript", "HTML5", "CSS3", "DiceBear API"],
+      link: "https://social-app.netlify.app",
+      github: "https://github.com/mrprince419/social-app",
+      image: "https://via.placeholder.com/800x400?text=Social+Media+App"
     },
     {
-      name: "Portfolio Website",
-      description: "A modern portfolio website built with React and TypeScript, featuring dark mode, animations, and responsive design.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      link: "https://mrprince419.github.io/portfolio",
-      github: "https://github.com/mrprince419/portfolio",
-      image: "https://via.placeholder.com/800x400?text=Portfolio+Website"
+      name: "Shopping Cart",
+      description: "An e-commerce shopping cart with interactive product browsing and real-time updates. Built with modern UI components and optimized performance.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Shadcn/ui"],
+      link: "https://shopping-cart.netlify.app",
+      github: "https://github.com/mrprince419/shopping-cart",
+      image: "https://via.placeholder.com/800x400?text=Shopping+Cart"
+    },
+    {
+      name: "Voting System",
+      description: "A polling system with user authentication, real-time form validation, and dynamic poll creation. Features localStorage sessions and real-time vote counting.",
+      technologies: ["JavaScript", "HTML5", "CSS3", "LocalStorage"],
+      link: "https://voting-system.netlify.app",
+      github: "https://github.com/mrprince419/voting-system",
+      image: "https://via.placeholder.com/800x400?text=Voting+System"
+    },
+    {
+      name: "Calorie Calculator",
+      description: "A health tracking application with BMR calculation, nutritional goals, and progress visualization using Chart.js.",
+      technologies: ["React", "JavaScript", "Chart.js"],
+      link: "https://calorie-calc.netlify.app",
+      github: "https://github.com/mrprince419/calorie-calculator",
+      image: "https://via.placeholder.com/800x400?text=Calorie+Calculator"
     }
-  ]
+  ],
+  references: "Available upon request"
 };
