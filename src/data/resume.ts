@@ -55,7 +55,7 @@ export const resumeData: ResumeData = {
     phone: "249-356-4705",
     linkedin: "https://linkedin.com/in/prince-uwagboe",
     github: "https://github.com/mrprince419",
-    avatar: "/profile.jpg"
+    avatar: "/resume picture.jpg"
   },
   summary: "I am a full-stack developer with a background in computer science from Algoma University. I specialize in Python, JavaScript/TypeScript, React.js, Node.js, Django, Flask, AWS, Docker, and SQL/NoSQL. With experience in technical support and CRM management, I've created projects like Social Media App, and Mood-Based Music Player. My technical proficiency, analytical skills, and commitment to continuous learning make me an invaluable asset to any organization.",
   currentFocus: "Currently pursuing a Bachelor's degree in Computer Science while working on full-stack web development projects.",
