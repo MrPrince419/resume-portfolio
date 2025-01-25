@@ -10,7 +10,8 @@ const resumeData = {
       projects: "https://github.com/MrPrince419?tab=repositories"
     }
   },
-  intro: "I am a dedicated Full-Stack Developer with a passion for creating innovative web solutions. Skilled in Python, JavaScript/TypeScript, React, Node.js, Django, Flask, and AWS, I excel at building dynamic and user-friendly applications. Whether it's developing a Mood-Based Music Player with TensorFlow.js or crafting real-time Social Media Apps, I bring ideas to life through clean, efficient, and impactful solutions. With a strong problem-solving mindset and a commitment to writing clean code, I embrace challenges as opportunities to innovate and deliver exceptional results.",
+  summary: "I'm a Full-Stack Developer passionate about creating efficient technical solutions and building user-friendly applications. My problem-solving skills and commitment to clean code define my professional approach.",
+  about: "I am a dedicated Full-Stack Developer with a passion for creating innovative web solutions. Skilled in Python, JavaScript/TypeScript, React, Node.js, Django, Flask, and AWS, I excel at building dynamic and user-friendly applications. Whether it's developing a Mood-Based Music Player with TensorFlow.js or crafting real-time Social Media Apps, I bring ideas to life through clean, efficient, and impactful solutions. With a strong problem-solving mindset and a commitment to writing clean code, I embrace challenges as opportunities to innovate and deliver exceptional results.",
   experience: [
     {
       title: "IT Support Intern",
@@ -43,32 +44,32 @@ const resumeData = {
   },
   projects: [
     {
-      name: "Shopping Cart",
-      description: "A full-featured e-commerce shopping cart built with React and TypeScript",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Redux"],
-      demoUrl: "https://mrprince419.github.io/shopping-cart",
-      sourceUrl: "https://github.com/MrPrince419/shopping-cart"
+      name: "Resume Portfolio",
+      description: "A modern, responsive portfolio website built with React and TypeScript",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      demoUrl: "https://mrprince419.github.io/resume-portfolio",
+      sourceUrl: "https://github.com/MrPrince419/resume-portfolio"
     },
     {
-      name: "Task Manager",
-      description: "A real-time task management application with collaborative features",
-      technologies: ["Node.js", "Express", "MongoDB", "Socket.io"],
-      demoUrl: "https://mrprince419.github.io/task-manager",
-      sourceUrl: "https://github.com/MrPrince419/task-manager"
+      name: "Weather Dashboard",
+      description: "Real-time weather application with detailed forecasts and interactive maps",
+      technologies: ["React", "TypeScript", "OpenWeather API", "Leaflet"],
+      demoUrl: "https://mrprince419.github.io/weather-dashboard",
+      sourceUrl: "https://github.com/MrPrince419/weather-dashboard"
     },
     {
-      name: "Mood Music Player",
-      description: "A music player that suggests songs based on user's mood using TensorFlow.js",
-      technologies: ["React", "TypeScript", "TensorFlow.js", "Node.js"],
-      demoUrl: "https://mrprince419.github.io/mood-music-player",
-      sourceUrl: "https://github.com/MrPrince419/mood-music-player"
+      name: "Task Tracker Pro",
+      description: "A collaborative task management system with real-time updates",
+      technologies: ["React", "Firebase", "Material-UI", "TypeScript"],
+      demoUrl: "https://task-tracker-pro.netlify.app",
+      sourceUrl: "https://github.com/MrPrince419/task-tracker-pro"
     },
     {
-      name: "Social Connect",
-      description: "A real-time social media platform with modern features",
-      technologies: ["React", "Firebase", "Tailwind CSS", "TypeScript"],
-      demoUrl: "https://mrprince419.github.io/social-connect",
-      sourceUrl: "https://github.com/MrPrince419/social-connect"
+      name: "Code Blog",
+      description: "A technical blog platform for sharing programming insights",
+      technologies: ["Next.js", "MDX", "Tailwind CSS", "TypeScript"],
+      demoUrl: "https://code-blog-prince.vercel.app",
+      sourceUrl: "https://github.com/MrPrince419/code-blog"
     }
   ]
 };

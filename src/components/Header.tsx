@@ -5,7 +5,7 @@ import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 
 interface HeaderProps {
   name: string;
-  intro: string;
+  summary: string;
   links: {
     github: string;
     linkedin: string;
@@ -14,7 +14,7 @@ interface HeaderProps {
   setDarkMode: (value: boolean) => void;
 }
 
-function Header({ name, intro, links, darkMode, setDarkMode }: HeaderProps) {
+function Header({ name, summary, links, darkMode, setDarkMode }: HeaderProps) {
   return (
     <header className="mb-12 text-center">
       <div className="flex justify-end mb-4">
@@ -64,7 +64,7 @@ function Header({ name, intro, links, darkMode, setDarkMode }: HeaderProps) {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto"
       >
-        {intro}
+        {summary}
       </motion.p>
 
       <div className="flex justify-center space-x-4">

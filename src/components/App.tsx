@@ -15,12 +15,12 @@ function App() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <Header
           name={resumeData.personalInfo.name}
-          intro={resumeData.intro}
+          summary={resumeData.summary}
           links={resumeData.personalInfo.links}
           darkMode={theme === 'dark'}
           setDarkMode={(isDark) => setTheme(isDark ? 'dark' : 'light')}
         />
-        <About summary={resumeData.intro} />
+        <About about={resumeData.about} />
         <Experience
           experience={resumeData.experience}
           education={resumeData.education}

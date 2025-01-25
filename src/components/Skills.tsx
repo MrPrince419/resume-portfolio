@@ -25,21 +25,6 @@ function Skills({ skills }: SkillsProps) {
     show: { opacity: 1, y: 0 }
   };
 
-  const skillItem = {
-    initial: { scale: 1 },
-    hover: { 
-      scale: 1.05,
-      transition: { duration: 0.15 }
-    }
-  };
-
-  const skillCategories = [
-    { title: 'Languages', items: skills.languages, color: 'blue' },
-    { title: 'Frameworks', items: skills.frameworks, color: 'green' },
-    { title: 'Tools', items: skills.tools, color: 'purple' },
-    { title: 'Databases', items: skills.databases, color: 'orange' },
-  ];
-
   return (
     <section className="mb-12">
       <motion.h2
@@ -59,28 +44,81 @@ function Skills({ skills }: SkillsProps) {
         viewport={{ once: true }}
         className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
-        {skillCategories.map((category, categoryIndex) => (
-          <motion.div
-            key={categoryIndex}
-            variants={item}
-            className="space-y-4"
-          >
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">{category.title}</h3>
-            <div className="flex flex-wrap gap-2">
-              {category.items.map((skill, skillIndex) => (
-                <motion.span
-                  key={skillIndex}
-                  variants={skillItem}
-                  initial="initial"
-                  whileHover="hover"
-                  className={`px-3 py-1 bg-${category.color}-100 dark:bg-${category.color}-900 text-${category.color}-800 dark:text-${category.color}-200 rounded-full text-sm cursor-default`}
-                >
-                  {skill}
-                </motion.span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+        <motion.div
+          variants={item}
+          className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-200"
+        >
+          <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Languages</h3>
+          <div className="flex flex-wrap gap-2">
+            {skills.languages.map((skill, index) => (
+              <motion.span
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.15 }}
+                className="px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full text-sm"
+              >
+                {skill}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={item}
+          className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-200"
+        >
+          <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Frameworks</h3>
+          <div className="flex flex-wrap gap-2">
+            {skills.frameworks.map((skill, index) => (
+              <motion.span
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.15 }}
+                className="px-3 py-1 bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200 rounded-full text-sm"
+              >
+                {skill}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={item}
+          className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-200"
+        >
+          <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Tools</h3>
+          <div className="flex flex-wrap gap-2">
+            {skills.tools.map((skill, index) => (
+              <motion.span
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.15 }}
+                className="px-3 py-1 bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200 rounded-full text-sm"
+              >
+                {skill}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={item}
+          className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-200"
+        >
+          <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Databases</h3>
+          <div className="flex flex-wrap gap-2">
+            {skills.databases.map((skill, index) => (
+              <motion.span
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.15 }}
+                className="px-3 py-1 bg-orange-100 dark:bg-orange-900/50 text-orange-800 dark:text-orange-200 rounded-full text-sm"
+              >
+                {skill}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   );
