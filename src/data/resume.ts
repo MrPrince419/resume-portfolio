@@ -44,32 +44,46 @@ const resumeData = {
   },
   projects: [
     {
-      name: "Resume Portfolio",
-      description: "A modern, responsive portfolio website built with React and TypeScript",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      demoUrl: "https://mrprince419.github.io/resume-portfolio",
-      sourceUrl: "https://github.com/MrPrince419/resume-portfolio"
+      name: "Mood Music Player",
+      description: "An innovative music player that suggests songs based on user's mood using TensorFlow.js and facial recognition",
+      technologies: ["React", "TypeScript", "TensorFlow.js", "Node.js"],
+      demoUrl: "https://mrprince419.github.io/mood-music-player",
+      sourceUrl: "https://github.com/MrPrince419/mood-music-player"
     },
     {
-      name: "Weather Dashboard",
-      description: "Real-time weather application with detailed forecasts and interactive maps",
-      technologies: ["React", "TypeScript", "OpenWeather API", "Leaflet"],
-      demoUrl: "https://mrprince419.github.io/weather-dashboard",
-      sourceUrl: "https://github.com/MrPrince419/weather-dashboard"
+      name: "Social Media App",
+      description: "A full-featured social media platform with real-time updates, user authentication, and post interactions",
+      technologies: ["React", "Firebase", "Tailwind CSS", "TypeScript"],
+      demoUrl: "https://mrprince419.github.io/social-media-app",
+      sourceUrl: "https://github.com/MrPrince419/social-media-app"
     },
     {
-      name: "Task Tracker Pro",
-      description: "A collaborative task management system with real-time updates",
-      technologies: ["React", "Firebase", "Material-UI", "TypeScript"],
-      demoUrl: "https://task-tracker-pro.netlify.app",
-      sourceUrl: "https://github.com/MrPrince419/task-tracker-pro"
+      name: "Voting System",
+      description: "A secure and transparent voting application with real-time results and authentication",
+      technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
+      demoUrl: "https://mrprince419.github.io/voting-system",
+      sourceUrl: "https://github.com/MrPrince419/voting-system"
     },
     {
-      name: "Code Blog",
-      description: "A technical blog platform for sharing programming insights",
-      technologies: ["Next.js", "MDX", "Tailwind CSS", "TypeScript"],
-      demoUrl: "https://code-blog-prince.vercel.app",
-      sourceUrl: "https://github.com/MrPrince419/code-blog"
+      name: "Shopping Cart",
+      description: "A modern e-commerce shopping cart with product filtering, search, and checkout functionality",
+      technologies: ["React", "TypeScript", "Redux", "Tailwind CSS"],
+      demoUrl: "https://mrprince419.github.io/shopping-cart",
+      sourceUrl: "https://github.com/MrPrince419/shopping-cart"
+    },
+    {
+      name: "Calorie Calculator",
+      description: "A comprehensive calorie tracking app with nutritional information and progress visualization",
+      technologies: ["React", "TypeScript", "Chart.js", "Tailwind CSS"],
+      demoUrl: "https://mrprince419.github.io/calorie-calculator",
+      sourceUrl: "https://github.com/MrPrince419/calorie-calculator"
+    },
+    {
+      name: "Calendar App",
+      description: "An interactive calendar application with event management and reminders",
+      technologies: ["React", "TypeScript", "Redux", "Tailwind CSS"],
+      demoUrl: "https://mrprince419.github.io/calendar-app",
+      sourceUrl: "https://github.com/MrPrince419/calendar-app"
     }
   ]
 };
