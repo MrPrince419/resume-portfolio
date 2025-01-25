@@ -11,7 +11,7 @@ export const resumeData = {
     }
   },
   intro: "I am a Full-Stack Developer passionate about building innovative web solutions. With expertise in Python, JavaScript/TypeScript, React, and AWS, I turn ideas into clean, efficient, and user-friendly applications. Let's create something amazing together",
-  summary: "I'm a Full-Stack Developer with expertise in Python, JavaScript/TypeScript, React.js, Node.js, Django, Flask, AWS, and SQL/NoSQL. I specialize in building dynamic, user-friendly web applications, such as a Mood-Based Music Player using TensorFlow.js and a Social Media App with real-time interactions. With experience in technical support and CRM management, I bring strong problem-solving skills, a passion for clean code, and a commitment to delivering innovative solutions. My technical proficiency, analytical skills, and dedication to continuous learning make me an invaluable asset to any organization. Let's connect and create something amazing!",
+  summary: "I'm a Full-Stack Developer with expertise in Python, JavaScript/TypeScript, React.js, Node.js, Django, Flask, AWS, and SQL/NoSQL. I specialize in building dynamic, user-friendly web applications, such as a Mood-Based Music Player using TensorFlow.js and a Social Media App with real-time interactions. With experience in technical support and CRM management, I bring strong problem-solving skills, a passion for clean code, and a commitment to delivering innovative solutions. Let's connect and create something amazing!",
   education: [
     {
       degree: "Bachelor of Science",
@@ -62,7 +62,9 @@ export const resumeData = {
         "Responsive design",
         "Dark mode support"
       ],
-      deployment: "Netlify, with automatic updates"
+      deployment: "Netlify, with automatic updates",
+      liveDemo: "https://github.com/MrPrince419/Mood-Based-Music-Player",
+      codeLink: "https://github.com/MrPrince419/Mood-Based-Music-Player"
     },
     {
       name: "Social Media App",
@@ -77,7 +79,9 @@ export const resumeData = {
         "Responsive design",
         "Toast notifications"
       ],
-      deployment: "Netlify, with automatic updates"
+      deployment: "Netlify, with automatic updates",
+      liveDemo: "https://github.com/MrPrince419/Social-Media-App",
+      codeLink: "https://github.com/MrPrince419/Social-Media-App"
     },
     {
       name: "Shopping Cart",
@@ -91,7 +95,9 @@ export const resumeData = {
         "Modern UI",
         "Optimized performance"
       ],
-      deployment: "Netlify, with automatic updates"
+      deployment: "Netlify, with automatic updates",
+      liveDemo: "https://github.com/MrPrince419/shopping-cart",
+      codeLink: "https://github.com/MrPrince419/shopping-cart"
     },
     {
       name: "Voting System",
@@ -108,7 +114,9 @@ export const resumeData = {
         "Interactive feedback",
         "Responsive design"
       ],
-      deployment: "Netlify, with automatic updates"
+      deployment: "Netlify, with automatic updates",
+      liveDemo: "https://github.com/MrPrince419/voting-system",
+      codeLink: "https://github.com/MrPrince419/voting-system"
     },
     {
       name: "Calorie Calculator",
@@ -121,7 +129,9 @@ export const resumeData = {
         "Food database",
         "Progress visualization"
       ],
-      deployment: "Netlify, with automatic updates"
+      deployment: "Netlify, with automatic updates",
+      liveDemo: "https://github.com/MrPrince419/calorie-calculator",
+      codeLink: "https://github.com/MrPrince419/calorie-calculator"
     }
   ],
   skills: [
