@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion'
-import { Moon, Sun, Mail, Phone, Linkedin, Github, MapPin, Download, ExternalLink } from 'lucide-react'
+import { Moon, Sun, Mail, Phone, Linkedin, Github, MapPin, Download, ExternalLink, Send } from 'lucide-react'
 import { resumeData } from '../../data/resume'
 import { useTheme } from '../../context/ThemeContext'
 import { getAssetPath } from '../../utils/paths'
+import { useState } from 'react';
 
 // Theme Toggle Component
 function ThemeToggle() {
@@ -231,56 +232,31 @@ function Education() {
 // Skills Component
 function Skills() {
   return (
-    <section id="skills" className="py-20">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <h2 className="section-title">Technical Skills</h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-            Here are the technologies and tools I work with to build modern web applications.
-          </p>
-        </motion.div>
-
+    <section id="skills" className="py-20 bg-white dark:bg-gray-900">
+      <div className="container">
+        <h2 className="section-title">Skills & Technologies</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {Object.entries(resumeData.skills).map(([category, skills], index) => (
             <motion.div
               key={category}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card p-6"
+              viewport={{ once: true }}
+              className="card h-full"
             >
-              <h3 className="text-xl font-semibold mb-4 capitalize text-blue-600 dark:text-blue-400">
-                {category}
+              <h3 className="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">
+                {category.charAt(0).toUpperCase() + category.slice(1)}
               </h3>
-              <div className="space-y-4">
-                {skills.map((skill, idx) => (
-                  <div key={idx} className="relative">
-                    <div className="flex justify-between mb-1">
-                      <span className="text-gray-700 dark:text-gray-300">{skill}</span>
-                    </div>
-                    <motion.div
-                      className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "100%" }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: idx * 0.1 }}
-                    >
-                      <motion.div
-                        className="h-full bg-gradient-to-r from-blue-500 to-blue-400"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: "85%" }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.5, delay: idx * 0.1 }}
-                      />
-                    </motion.div>
-                  </div>
+              <div className="flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="skill-tag animate-float"
+                    style={{ animationDelay: `${Math.random() * 2}s` }}
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </motion.div>
@@ -288,7 +264,7 @@ function Skills() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 // Projects Component
@@ -361,6 +337,131 @@ function Projects() {
   );
 }
 
+// Contact Component
+function Contact() {
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // You can integrate with a form service like Formspree here
+    window.location.href = `mailto:${resumeData.personalInfo.email}?subject=Contact from Portfolio&body=Name: ${formState.name}%0D%0A%0D%0AMessage: ${formState.message}`;
+  };
+
+  return (
+    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
+      <div className="container">
+        <h2 className="section-title">Get In Touch</h2>
+        <div className="max-w-2xl mx-auto">
+          <motion.form
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            onSubmit={handleSubmit}
+            className="card space-y-6"
+          >
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={formState.name}
+                onChange={(e) => setFormState(prev => ({ ...prev, name: e.target.value }))}
+                required
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                value={formState.email}
+                onChange={(e) => setFormState(prev => ({ ...prev, email: e.target.value }))}
+                required
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                value={formState.message}
+                onChange={(e) => setFormState(prev => ({ ...prev, message: e.target.value }))}
+                required
+                rows={5}
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
+              />
+            </div>
+            <button
+              type="submit"
+              className="btn btn-primary w-full"
+            >
+              <Send className="w-5 h-5 mr-2" />
+              Send Message
+            </button>
+          </motion.form>
+
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.a
+              href={`mailto:${resumeData.personalInfo.email}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="card flex flex-col items-center p-6 hover:scale-105 transition-transform duration-200"
+            >
+              <Mail className="w-8 h-8 text-blue-500 mb-4" />
+              <h3 className="text-lg font-semibold mb-2">Email</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-center">{resumeData.personalInfo.email}</p>
+            </motion.a>
+
+            <motion.a
+              href={resumeData.personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="card flex flex-col items-center p-6 hover:scale-105 transition-transform duration-200"
+            >
+              <Linkedin className="w-8 h-8 text-blue-500 mb-4" />
+              <h3 className="text-lg font-semibold mb-2">LinkedIn</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-center">Connect with me</p>
+            </motion.a>
+
+            <motion.a
+              href={resumeData.personalInfo.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="card flex flex-col items-center p-6 hover:scale-105 transition-transform duration-200"
+            >
+              <Github className="w-8 h-8 text-blue-500 mb-4" />
+              <h3 className="text-lg font-semibold mb-2">GitHub</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-center">Check out my repos</p>
+            </motion.a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // References Component
 function References() {
   return (
@@ -395,6 +496,7 @@ function App() {
         <Education />
         <Skills />
         <Projects />
+        <Contact />
         <References />
       </main>
       <footer className="py-8 text-center text-gray-600 dark:text-gray-400">
