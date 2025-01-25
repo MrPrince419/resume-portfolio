@@ -1,7 +1,7 @@
 import { useState, useEffect, createContext, useContext } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Moon, Sun, Mail, Phone, Linkedin, Github, MapPin } from 'lucide-react'
-import { resumeData } from './data/resume'
+import { resumeData } from './src/data/resume'
 
 // Theme Context
 type Theme = "dark" | "light" | "system"
