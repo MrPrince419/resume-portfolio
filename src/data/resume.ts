@@ -54,8 +54,8 @@ export const resumeData = {
       date: "Dec 2024",
       tech: ["TensorFlow.js", "Web Audio API", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS"],
       features: ["Real-time mood detection", "Music upload and mood-based playlist organization", "Drag-and-drop interface", "Shuffle and repeat modes", "Progress tracking", "Responsive design", "Dark mode support"],
-      deployment: "GitHub Pages",
-      demoUrl: "https://mrprince419.github.io/mood-music-player",
+      deployment: "Netlify",
+      demoUrl: "https://mrprince-mood-based-music-player.netlify.app",
       sourceUrl: "https://github.com/MrPrince419/mood-music-player"
     },
     {
@@ -63,8 +63,8 @@ export const resumeData = {
       date: "Nov 2024",
       tech: ["Vanilla JavaScript", "HTML5", "CSS3", "Font Awesome", "DiceBear API"],
       features: ["User authentication", "Post creation with images and captions", "Real-time interactions", "Live image previews", "Interactive like system", "Responsive design", "Toast notifications"],
-      deployment: "GitHub Pages",
-      demoUrl: "https://mrprince419.github.io/social-media-app",
+      deployment: "Netlify",
+      demoUrl: "https://mrprince-social-media.netlify.app",
       sourceUrl: "https://github.com/MrPrince419/social-media-app"
     },
     {
@@ -72,8 +72,8 @@ export const resumeData = {
       date: "Oct 2024",
       tech: ["React", "TypeScript", "Tailwind CSS", "Shadcn/ui", "Lucide Icons"],
       features: ["Interactive product browsing", "Real-time cart updates", "Elegant transitions", "Responsive design", "Modern UI", "Optimized performance"],
-      deployment: "GitHub Pages",
-      demoUrl: "https://mrprince419.github.io/shopping-cart",
+      deployment: "Netlify",
+      demoUrl: "https://mrprince-shopping-cart.netlify.app",
       sourceUrl: "https://github.com/MrPrince419/shopping-cart"
     },
     {
@@ -81,17 +81,17 @@ export const resumeData = {
       date: "Sep 2024",
       tech: ["React", "TypeScript", "Tailwind CSS"],
       features: ["Event creation and management", "Date navigation", "Event categories", "Reminder system", "Responsive design", "Dark mode"],
-      deployment: "GitHub Pages",
-      demoUrl: "https://mrprince419.github.io/calendar-app",
+      deployment: "Netlify",
+      demoUrl: "https://mrprince-calendar.netlify.app",
       sourceUrl: "https://github.com/MrPrince419/calendar-app"
     },
     {
       name: "Voting System",
       date: "Aug 2024",
       tech: ["Vanilla JavaScript", "HTML5", "CSS3"],
-      features: ["User authentication", "Poll creation", "Real-time form validation", "localStorage sessions", "Dynamic polls", "Real-time vote counting"],
-      deployment: "GitHub Pages",
-      demoUrl: "https://mrprince419.github.io/voting-app",
+      features: ["User authentication", "Poll creation", "Real-time form validation", "localStorage sessions", "Dynamic polls", "Real-time vote counting", "Progress tracking", "Interactive feedback", "Responsive design"],
+      deployment: "Netlify",
+      demoUrl: "https://mrprince-voting-app.netlify.app",
       sourceUrl: "https://github.com/MrPrince419/voting-app"
     },
     {
@@ -99,8 +99,8 @@ export const resumeData = {
       date: "Jul 2024",
       tech: ["JavaScript", "React", "Chart.js"],
       features: ["Calorie tracking", "BMR calculation", "Nutritional goals", "Food database", "Progress visualization"],
-      deployment: "GitHub Pages",
-      demoUrl: "https://mrprince419.github.io/calorie-calculator",
+      deployment: "Netlify",
+      demoUrl: "https://mrprince-calorie-calculator.netlify.app",
       sourceUrl: "https://github.com/MrPrince419/calorie-calculator"
     }
   ],
