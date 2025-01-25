@@ -47,43 +47,36 @@ const resumeData = {
       name: "Mood-Based-Music-Player",
       description: "An innovative music player that suggests songs based on user's mood using TensorFlow.js and facial recognition",
       technologies: ["React", "TypeScript", "TensorFlow.js", "Node.js"],
-      demoUrl: "https://mrprince419.github.io/Mood-Based-Music-Player",
+      demoUrl: "https://mrprince-mood-based-music-player.netlify.app/",
       sourceUrl: "https://github.com/MrPrince419/Mood-Based-Music-Player"
-    },
-    {
-      name: "Social-Media-App",
-      description: "A full-featured social media platform with real-time updates, user authentication, and post interactions",
-      technologies: ["React", "Firebase", "Tailwind CSS", "TypeScript"],
-      demoUrl: "https://mrprince419.github.io/Social-Media-App",
-      sourceUrl: "https://github.com/MrPrince419/Social-Media-App"
     },
     {
       name: "Voting-App",
       description: "A secure and transparent voting application with real-time results and authentication",
       technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
-      demoUrl: "https://mrprince419.github.io/Voting-App",
+      demoUrl: "https://mrprince419-voting-app.netlify.app/",
       sourceUrl: "https://github.com/MrPrince419/Voting-App"
-    },
-    {
-      name: "Shopping-Cart-App",
-      description: "A modern e-commerce shopping cart with product filtering, search, and checkout functionality",
-      technologies: ["React", "TypeScript", "Redux", "Tailwind CSS"],
-      demoUrl: "https://mrprince419.github.io/Shopping-Cart-App",
-      sourceUrl: "https://github.com/MrPrince419/Shopping-Cart-App"
-    },
-    {
-      name: "Calorie-Calculator-App",
-      description: "A comprehensive calorie tracking app with nutritional information and progress visualization",
-      technologies: ["React", "TypeScript", "Chart.js", "Tailwind CSS"],
-      demoUrl: "https://mrprince419.github.io/Calorie-Calculator-App",
-      sourceUrl: "https://github.com/MrPrince419/Calorie-Calculator-App"
     },
     {
       name: "Calender-App",
       description: "An interactive calendar application with event management and reminders",
       technologies: ["React", "TypeScript", "Redux", "Tailwind CSS"],
-      demoUrl: "https://mrprince419.github.io/Calender-App",
+      demoUrl: "https://mrprince419-calendar-app.netlify.app/",
       sourceUrl: "https://github.com/MrPrince419/Calender-App"
+    },
+    {
+      name: "Calorie-Calculator-App",
+      description: "A comprehensive calorie tracking app with nutritional information and progress visualization",
+      technologies: ["React", "TypeScript", "Chart.js", "Tailwind CSS"],
+      demoUrl: "https://mrprince-calorie-calculator-app.netlify.app/",
+      sourceUrl: "https://github.com/MrPrince419/Calorie-Calculator-App"
+    },
+    {
+      name: "Shopping-Cart-App",
+      description: "A modern e-commerce shopping cart with product filtering, search, and checkout functionality",
+      technologies: ["React", "TypeScript", "Redux", "Tailwind CSS"],
+      demoUrl: "https://mrprince419.github.io/shopping-cart-app/",
+      sourceUrl: "https://github.com/MrPrince419/Shopping-Cart-App"
     }
   ]
 };
