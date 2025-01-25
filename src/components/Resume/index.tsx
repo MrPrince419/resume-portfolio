@@ -41,130 +41,107 @@ function Navbar() {
 
 // Hero Component
 function Hero() {
-  const { personalInfo } = resumeData
-  
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
-      <div className="container mx-auto px-4 py-16">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
+    <section className="relative py-20 overflow-hidden">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          {/* Profile Image */}
           <motion.div
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="mb-8"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.2,
+              ease: [0, 0.71, 0.2, 1.01]
+            }}
+            className="relative w-48 h-48 lg:w-64 lg:h-64"
           >
-            <img
-              src={personalInfo.avatar || "https://via.placeholder.com/150"}
-              alt={personalInfo.name}
-              className="w-32 h-32 rounded-full mx-auto border-4 border-blue-500 dark:border-blue-400 shadow-lg"
-            />
-          </motion.div>
-          
-          <motion.h1 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400"
-          >
-            {personalInfo.name}
-          </motion.h1>
-          
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="flex items-center justify-center space-x-2 text-gray-600 dark:text-gray-400 mb-6"
-          >
-            <MapPin className="w-5 h-5" />
-            <span className="text-lg">{personalInfo.location}</span>
+            <div className="w-full h-full rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
+              <img
+                src={resumeData.personalInfo.avatar}
+                alt={resumeData.personalInfo.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
           </motion.div>
 
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
-          >
-            {resumeData.summary}
-          </motion.p>
+          {/* Content */}
+          <div className="flex-1">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-center lg:text-left"
+            >
+              <h1 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+                {resumeData.personalInfo.name}
+              </h1>
+              <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
+                {resumeData.summary}
+              </p>
 
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-            className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6 mb-8"
-          >
-            <a 
-              href={`mailto:${personalInfo.email}`}
-              className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              <Mail className="w-5 h-5" />
-              <span>{personalInfo.email}</span>
-            </a>
-            <a 
-              href={`tel:${personalInfo.phone}`}
-              className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              <Phone className="w-5 h-5" />
-              <span>{personalInfo.phone}</span>
-            </a>
-          </motion.div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                <a
+                  href="/resume.pdf"
+                  className="btn btn-primary inline-flex items-center justify-center gap-2"
+                  download
+                >
+                  <Download className="w-5 h-5" />
+                  Download CV
+                </a>
+                <a
+                  href="#projects"
+                  className="btn btn-outline inline-flex items-center justify-center gap-2"
+                >
+                  View Projects
+                  <ExternalLink className="w-5 h-5" />
+                </a>
+              </div>
 
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7, duration: 0.5 }}
-            className="flex items-center justify-center space-x-6"
-          >
-            <a 
-              href="/resume.pdf" 
-              download
-              className="btn btn-primary flex items-center space-x-2"
-            >
-              <Download className="w-5 h-5" />
-              <span>Download CV</span>
-            </a>
-            <a 
-              href="#projects"
-              className="btn btn-outline flex items-center space-x-2"
-            >
-              <ExternalLink className="w-5 h-5" />
-              <span>View Projects</span>
-            </a>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            className="flex items-center justify-center space-x-6 mt-8"
-          >
-            <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a
-              href={personalInfo.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              <Github className="w-6 h-6" />
-            </a>
-          </motion.div>
-        </motion.div>
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                  <MapPin className="w-5 h-5" />
+                  <span>{resumeData.personalInfo.location}</span>
+                </div>
+                <a
+                  href={`mailto:${resumeData.personalInfo.email}`}
+                  className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span>{resumeData.personalInfo.email}</span>
+                </a>
+                <a
+                  href={`tel:${resumeData.personalInfo.phone}`}
+                  className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400"
+                >
+                  <Phone className="w-5 h-5" />
+                  <span>{resumeData.personalInfo.phone}</span>
+                </a>
+                <a
+                  href={resumeData.personalInfo.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400"
+                >
+                  <Linkedin className="w-5 h-5" />
+                  <span>LinkedIn</span>
+                </a>
+                <a
+                  href={resumeData.personalInfo.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400"
+                >
+                  <Github className="w-5 h-5" />
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }
 
 // About Component
