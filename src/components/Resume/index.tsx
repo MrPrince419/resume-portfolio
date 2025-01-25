@@ -58,7 +58,7 @@ function Hero() {
           >
             <div className="w-full h-full rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
               <img
-                src={`${import.meta.env.BASE_URL}${resumeData.personalInfo.avatar.replace(/^\//, '')}`}
+                src={`${import.meta.env.BASE_URL}${resumeData.personalInfo.avatar?.replace(/^\//, '') || 'profile.jpg'}`}
                 alt={resumeData.personalInfo.name}
                 className="w-full h-full object-cover"
               />
