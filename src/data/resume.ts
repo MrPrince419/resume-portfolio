@@ -10,7 +10,7 @@ export const resumeData = {
       projects: "https://github.com/MrPrince419?tab=repositories"
     }
   },
-  intro: "I am a Full-Stack Developer passionate about building innovative web solutions. With expertise in Python, JavaScript/TypeScript, React, and AWS, I turn ideas into clean, efficient, and user-friendly applications. Let's create something amazing together",
+  intro: "I'm a Full-Stack Developer with expertise in Python, JavaScript/TypeScript, React.js, Node.js, Django, Flask, AWS, and SQL/NoSQL. I specialize in building dynamic, user-friendly web applications, such as a Mood-Based Music Player using TensorFlow.js and a Social Media App with real-time interactions. With experience in technical support and CRM management, I bring strong problem-solving skills, a passion for clean code, and a commitment to delivering innovative solutions. Let's connect and create something amazing!",
   summary: "I'm a Full-Stack Developer with expertise in Python, JavaScript/TypeScript, React.js, Node.js, Django, Flask, AWS, and SQL/NoSQL. I specialize in building dynamic, user-friendly web applications, such as a Mood-Based Music Player using TensorFlow.js and a Social Media App with real-time interactions. With experience in technical support and CRM management, I bring strong problem-solving skills, a passion for clean code, and a commitment to delivering innovative solutions. Let's connect and create something amazing!",
   education: [
     {
