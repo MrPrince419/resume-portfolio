@@ -1,16 +1,16 @@
-The failure is due to the `actions/upload-pages-artifact@v4` action not being resolved. It appears that the version `v4` might not exist or is incorrect. Let's update the workflow file to use a valid version.
+The job failed because it uses a deprecated version of `actions/upload-artifact: v3`. Updating to a supported version should resolve the issue.
 
 Replace:
 ```yaml
-- uses: actions/upload-pages-artifact@v4
+- uses: actions/upload-artifact@v3
 ```
 
 With:
 ```yaml
-- uses: actions/upload-pages-artifact@v1
+- uses: actions/upload-artifact@v2
 ```
 
-Here's the updated workflow file:
+Here is the updated workflow file:
 
 ```yaml
 name: Deploy to GitHub Pages
@@ -39,7 +39,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           path: ./dist
 
