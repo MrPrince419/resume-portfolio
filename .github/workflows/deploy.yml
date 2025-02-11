@@ -1,3 +1,18 @@
+The failure is due to the `actions/upload-pages-artifact@v4` action not being resolved. It appears that the version `v4` might not exist or is incorrect. Let's update the workflow file to use a valid version.
+
+Replace:
+```yaml
+- uses: actions/upload-pages-artifact@v4
+```
+
+With:
+```yaml
+- uses: actions/upload-pages-artifact@v1
+```
+
+Here's the updated workflow file:
+
+```yaml
 name: Deploy to GitHub Pages
 
 on:
@@ -24,7 +39,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
 
@@ -38,3 +53,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+```
