@@ -2,7 +2,7 @@
 
 My professional resume and portfolio website built with React, TypeScript, and Tailwind CSS.
 
-🌐 **Live Demo**: [https://mrprince419.github.io/resume-portfolio/](https://mrprince419.github.io/resume-portfolio/)
+🌐 **Live Site**: [https://mrprince419.github.io/resume-portfolio/](https://mrprince419.github.io/resume-portfolio/)
 
 ## Features
 
@@ -47,5 +47,3 @@ npm run build
 ## Deployment
 
 The portfolio is automatically deployed to GitHub Pages using GitHub Actions whenever changes are pushed to the main branch.
-
-Visit the live site at: [https://mrprince419.github.io/resume-portfolio/](https://mrprince419.github.io/resume-portfolio/)
